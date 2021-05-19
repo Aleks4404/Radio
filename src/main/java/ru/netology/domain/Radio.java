@@ -1,5 +1,12 @@
 package ru.netology.domain;
 
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Radio {
     private int currentRadioChannel; //Текущее положение радиоканала
     private int minRadioChannel = 0; //Минимальный радиоканал
@@ -8,10 +15,6 @@ public class Radio {
     private int currentVolume; //Текущее положение звука
     private int minVolume = 0; //Минимальный звук
     private int maxVolume = 100;  //Максимальный звук
-
-    public Radio(int maxRadioChannel) {
-        this.maxRadioChannel = maxRadioChannel;
-    }
 
     public int getCurrentRadioChannel() {
         return currentRadioChannel;
