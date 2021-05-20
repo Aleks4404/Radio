@@ -1,12 +1,10 @@
 package ru.netology.domain.contructor;
 
 import org.junit.jupiter.api.Test;
-import ru.netology.domain.contructor.Radio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
-
 
     @Test
     void shouldRadioChannelNumber() {
@@ -35,27 +33,27 @@ class RadioTest {
         assertEquals(3, radio.getCurrentRadioChannel());
     }
 
-    @Test // Тест переключения радиоканала с 10 на 0
+    @Test // Тест переключения радиоканала с 10 на 1
     public void shouldNextMaxRadioChannel() {
         Radio radio = new Radio(
                 10,
-                1);
+                12);
         radio.setCurrentRadioChannel(10);
         radio.nextCurrentRadioChannel();
-        assertEquals(0, radio.getCurrentRadioChannel());
+        assertEquals(1, radio.getCurrentRadioChannel());
     }
 
-    @Test // Тест переключения радиоканала с 0 на 10
+    @Test // Тест переключения радиоканала с 1 на 10
     public void shouldPrevMinRadioChannel() {
         Radio radio = new Radio(
                 10,
                 0);
-        radio.setCurrentRadioChannel(0);
+        radio.setCurrentRadioChannel(1);
         radio.prevCurrentRadioChannel();
         assertEquals(10, radio.getCurrentRadioChannel());
     }
 
-    @Test // Тест граничных значеий
+    @Test // Тест граничных значений
     public void shouldBoundaryMaxRadioChannel() {
         Radio radio = new Radio(
                 10,
@@ -67,10 +65,10 @@ class RadioTest {
     @Test // Тест граничных значений
     public void shouldBoundaryMinRadioChannel() {
         Radio radio = new Radio(
-                0,
+                1,
                 7);
         radio.setCurrentRadioChannel(-1);
-        assertEquals(0, radio.getCurrentRadioChannel());
+        assertEquals(1, radio.getCurrentRadioChannel());
     }
 
     @Test

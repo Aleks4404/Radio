@@ -1,12 +1,11 @@
 package ru.netology.domain.contructor;
 
 public class Radio {
-    private int minRadioChannel = 0; //Минимальное количество радиоканалов
-    private int maxRadioChannel = 10; //Максимальное количество радиоканалов
+    private final int maxRadioChannel = 10; //Максимальное количество радиоканалов
+    private int minRadioChannel = 1; //Минимальное количество радиоканалов
     private int currentRadioChannel; //Текущее положение радиоканала
-
-    private int minVolume = 0; //Минимальное значение звука
-    private int maxVolume = 100;  //Максимальное значение звука
+    private int minVolume = 0; //Минимальный уровень звука
+    private int maxVolume = 100;  //Максимальный уровень звука
     private int currentVolume; //Текущее положение звука
 
     // All args constructor
